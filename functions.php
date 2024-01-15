@@ -99,8 +99,6 @@ function updateData($table, $data, $where, $json = true)
     }
     $sql = "UPDATE $table SET " . implode(', ', $cols) . " WHERE $where";
 
-    echo 'the SQL:  ' . $sql;
-
     $stmt = $con->prepare($sql);
     $stmt->execute($vals);
     $count = $stmt->rowCount();
